@@ -12,6 +12,8 @@
 		831CB5F71FAC914500D2ABCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831CB5F51FAC914500D2ABCD /* Main.storyboard */; };
 		831CB5F91FAC914500D2ABCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831CB5F81FAC914500D2ABCD /* Assets.xcassets */; };
 		831CB5FC1FAC914500D2ABCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831CB5FA1FAC914500D2ABCD /* LaunchScreen.storyboard */; };
+		F253780825680BF7006736AF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253780725680BF7006736AF /* Theme.swift */; };
+		F253780A25684A96006736AF /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F253780925684A96006736AF /* MyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		831CB5F81FAC914500D2ABCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		831CB5FB1FAC914500D2ABCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831CB5FD1FAC914500D2ABCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F253780725680BF7006736AF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		F253780925684A96006736AF /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				831CB5F11FAC914500D2ABCD /* AppDelegate.swift */,
 				831CB5F31FAC914500D2ABCD /* ViewController.swift */,
 				831CB5F51FAC914500D2ABCD /* Main.storyboard */,
+				F253780925684A96006736AF /* MyCollectionViewCell.swift */,
+				F253780725680BF7006736AF /* Theme.swift */,
 				831CB5F81FAC914500D2ABCD /* Assets.xcassets */,
 				831CB5FA1FAC914500D2ABCD /* LaunchScreen.storyboard */,
 				831CB5FD1FAC914500D2ABCD /* Info.plist */,
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F253780825680BF7006736AF /* Theme.swift in Sources */,
 				831CB5F41FAC914500D2ABCD /* ViewController.swift in Sources */,
+				F253780A25684A96006736AF /* MyCollectionViewCell.swift in Sources */,
 				831CB5F21FAC914500D2ABCD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,8 +285,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84LWTY6T5F;
 				INFOPLIST_FILE = MustacheMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AssistStat.MustacheMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MDB.MustacheMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -292,8 +301,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84LWTY6T5F;
 				INFOPLIST_FILE = MustacheMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AssistStat.MustacheMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MDB.MustacheMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
