@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  MustacheMe
 //
-//  Created by Christopher Walter on 11/3/17.
-//  Copyright © 2017 AssistStat. All rights reserved.
+//  Created by Malena Duque-Baird on 11/19/2020.
+//  Copyright © 2020 AssistStat. All rights reserved.
 //
 
 import UIKit
@@ -22,10 +22,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var selectedTheme = Theme()
     var selectedStamp = "bigH"
     
+    var themes = [Theme]()
+    var mustachesOnScreen = [UIImageView]()
+    
     // create global variable for UIImagePicker
     let picker = UIImagePickerController()
-    
-    var themes = [Theme]()
     
     override func viewDidLoad()
     {
@@ -60,16 +61,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         newMustache.image = UIImage(named: selectedStamp)
         myImageView.addSubview(newMustache)
         
+        
         // here, we are creating a tag for the mustache, so every single newMustache image view that is created will have this tag.  This will make it easy to refer to all of the mustache imageViews at once.
         newMustache.tag = 1
+        
+        // add the new stamp/mustache to the array named mustachesOnScreen.  This way, we can remove the last mustache from the array when the user presses the undo button.
+        mustachesOnScreen.append(newMustache)
         
         // programtically make pan gesture on mustache
         let pan = UIPanGestureRecognizer(target: self, action: #selector(mustachePanned(_:)))
         newMustache.addGestureRecognizer(pan)
         // this just makes it so that the user can interact with the mustache so that the pan gesture works!
         newMustache.isUserInteractionEnabled = true
-        
-        
     }
     
     @objc func mustachePanned(_ sender: UIPanGestureRecognizer)
@@ -81,6 +84,43 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func cameraButtonSelected(_ sender: UIBarButtonItem)
     {
         cameraAlert()
@@ -127,6 +167,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
+    
+    
+    @IBAction func undoButtonTapped(_ sender: Any)
+    {
+        mustachesOnScreen.removeLast()
+    }
+        
+
     
     func noCamera()
     {
