@@ -15,12 +15,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var myImageView: UIImageView!
     
-    
     @IBOutlet weak var mySecondCollectionView: UICollectionView!
+    
     @IBOutlet weak var myCollectionView: UICollectionView!
     
     var selectedTheme = Theme()
-    var selectedStamp = "Mustache"
+    var selectedStamp = "bigH"
     
     // create global variable for UIImagePicker
     let picker = UIImagePickerController()
@@ -51,7 +51,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let location = sender.location(in: myImageView)
         
         // here, we are creating an image view for the mustache.  The x and y values for the location of the image view are just the x and y values from the location variable (location of where the user tapped) that we made above.
-        let newMustache = UIImageView(frame: CGRect(x: location.x, y: location.y, width: 40, height: 40))
+        let newMustache = UIImageView(frame: CGRect(x: location.x, y: location.y, width: 60, height: 60))
+
         
         // without this line of code, the top left corner of the mustache, which is the point (0,0) on the mustache, the corner of the mustache shows up at the point on the image view where the user tapped.  This makes the mustache be off to the side.  So, here we are saying that the center of the mustache is the location variable (where the user taps), so it all lines up nicely.
         newMustache.center = location
@@ -67,6 +68,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         newMustache.addGestureRecognizer(pan)
         // this just makes it so that the user can interact with the mustache so that the pan gesture works!
         newMustache.isUserInteractionEnabled = true
+        
+        
     }
     
     @objc func mustachePanned(_ sender: UIPanGestureRecognizer)
@@ -141,16 +144,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             animated: true,
             completion: nil)
     }
-    
-    // To Do :  Add ImagePicker Methods
-    
+        
     // Make sure you add privacy warnings on info.plist
     
     // this is what will happen if someone clicks the cancel button when offered to pick a picture from their camera roll
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
         dismiss(animated: true, completion: nil)
-        
     }
     
     // this is what will happen if someone does choose to pick a picture from their camera roll
@@ -168,18 +168,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    
-    
     func loadThemes()
     {
-        let hats = Theme(t: "hats", i: ["blueHat", "redHat", "purpleHat", "crown"])
-        let glasses = Theme(t: "glasses", i: ["aviators", "roundGlasses"])
-        let mustaches = Theme(t: "mustaches", i: ["Mustache"])
-        let fourthTheme = Theme(t: "fourthTheme", i: ["blueHat", "redHat", "mustache", "aviators"])
+        let bowties = Theme(t: "ties", i: ["redBowtie", "yellowBowtie", "redStripeBowtie", "yellowStripeBowtie", "redDotBowtie", "yellowDotBowtie"])
+        let ties = Theme(t: "ties", i: ["redTie", "yellowTie", "redStripeTie", "yellowStripeTie"])
+        let hats = Theme(t: "hats", i: ["redHat", "yellowHat", "redHatH", "yellowHatH"])
+        let masks = Theme(t: "masks", i: ["redMask", "yellowMask", "redStripeMask", "yellowStripeMask", "redMaskH", "yellowMaskH", "redMaskHStripe", "yellowMaskHStripe"])
+        let flags = Theme(t: "flags", i: ["redFlag", "yellowFlag", "redFlagH", "yellowFlagH", "bigH"])
+        let megaphones = Theme(t: "megaphones", i: ["redMegaphone", "yellowMegaphone", "redStripeMegaphone", "yellowStripeMegaphone", "redMegaphoneH", "yellowMegaphoneH"])
+    
+        themes.append(bowties)
+        themes.append(ties)
         themes.append(hats)
-        themes.append(glasses)
-        themes.append(mustaches)
-        themes.append(fourthTheme)
+        themes.append(masks)
+        themes.append(megaphones)
+        themes.append(flags)
         
         selectedTheme = themes[0]
     }
@@ -207,8 +210,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             var defaultPicture = currentTheme.images[0]
             cell.myImageView.image = UIImage(named: defaultPicture)
            // cell.backgroundColor = UIColor.systemGray2
-               // Configure the cell
-               return cell
+           // Configure the cell
+              return cell
         }
         else
         {
