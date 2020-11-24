@@ -83,43 +83,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         mustache?.center = sender.location(in: myImageView)
     }
     
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     @IBAction func cameraButtonSelected(_ sender: UIBarButtonItem)
     {
@@ -157,15 +120,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    func alertForClear()
+       {
+           let clearAlert = UIAlertController(title: "Are you sure you want to clear the stamps from your image?", message: "", preferredStyle: .alert)
+
+               clearAlert.addAction(UIAlertAction(title: "Yes, Clear Stamps", style: .default, handler:
+                   {
+                           action in
+                           for subview in self.myImageView.subviews
+                           {
+                               if subview.tag == 1
+                               {
+                                   subview.removeFromSuperview()
+                               }
+                           }
+                   }))
+                
+        clearAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+               self.present(clearAlert, animated: true)
+       }
+    
+
     @IBAction func clearButtonSelected(_ sender: UIBarButtonItem)
     {
-        for subview in myImageView.subviews
-        {
-            if subview.tag == 1
-            {
-                subview.removeFromSuperview()
-            }
-        }
+        alertForClear()
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)
+    {
+        alertForClear()
     }
     
     
@@ -175,7 +159,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
         
 
-    
     func noCamera()
     {
         let alertVC = UIAlertController(
@@ -257,7 +240,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             var currentTheme = themes[indexPath.row]
             var defaultPicture = currentTheme.images[0]
             cell.myImageView.image = UIImage(named: defaultPicture)
-           // cell.backgroundColor = UIColor.systemGray2
+            cell.layer.cornerRadius = 4.5
+        
+            cell.backgroundColor = UIColor.systemGray6
+            
            // Configure the cell
               return cell
         }
@@ -271,6 +257,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let currentPicture = selectedTheme.images[indexPath.row]
             cell.myImageView.image = UIImage(named: currentPicture)
                // Configure the cell
+            cell.layer.cornerRadius = 4.5
+            cell.backgroundColor = UIColor.systemGray6
                return cell
         }
     }
@@ -280,13 +268,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if collectionView == myCollectionView
         {
             selectedTheme = themes[indexPath.row]
-            print(selectedTheme.theme)
+       //     myCollectionView.reloadData()
             mySecondCollectionView.reloadData()
+            
+            let cell = myCollectionView.cellForItem(at: indexPath) as! MyCollectionViewCell
+            cell.backgroundColor = UIColor.gray
         }
         else
         {
             selectedStamp = selectedTheme.images[indexPath.row]
+            // mySecondCollectionView.reloadData()
+            let cell = mySecondCollectionView.cellForItem(at: indexPath) as! MyCollectionViewCell
+            cell.backgroundColor = UIColor.gray
         }
+    
     }
 }
 

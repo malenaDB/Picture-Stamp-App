@@ -12,18 +12,18 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MustacheMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O5x-dO-TkP" userLabel="Vertical Stack View">
-                                <rect key="frame" x="0.0" y="44" width="345" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O5x-dO-TkP" userLabel="Vertical Stack View">
+                                <rect key="frame" x="15" y="59" width="345" height="593"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mqS-AJ-2aW">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mqS-AJ-2aW">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="80"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="m1h-At-3ik"/>
+                                            <constraint firstAttribute="height" constant="80" id="8aJ-y8-f1d"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hEl-Mh-wQK">
                                             <size key="itemSize" width="80" height="80"/>
@@ -33,7 +33,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myCell" id="x8I-WW-c7E" customClass="MyCollectionViewCell" customModule="MustacheMe" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-15" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vsx-vh-eG5">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -52,15 +52,15 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" id="m2C-la-ueU" userLabel="Horizontal Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="250"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" id="m2C-la-ueU" userLabel="Horizontal Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="593"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="adB-Nj-tIs">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="250"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="513"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="YbA-lv-rLl"/>
+                                                    <constraint firstAttribute="width" constant="80" id="GDg-sL-QaS"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m2c-ap-Gi1">
                                                     <size key="itemSize" width="80" height="80"/>
@@ -70,7 +70,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myCell" id="jOW-fh-JFJ" customClass="MyCollectionViewCell" customModule="MustacheMe" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="0.0" width="80" height="77"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="77"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dxr-ek-ApH">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="77"/>
@@ -90,7 +90,7 @@
                                                 </cells>
                                             </collectionView>
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fordswelcome" translatesAutoresizingMaskIntoConstraints="NO" id="BRf-Ma-pku">
-                                                <rect key="frame" x="108" y="0.0" width="237" height="250"/>
+                                                <rect key="frame" x="88" y="0.0" width="257" height="513"/>
                                                 <gestureRecognizers/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="Muc-pg-xa8" appends="YES" id="hKg-XD-fsV"/>
@@ -99,29 +99,34 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="B7n-Bn-gme"/>
+                                    <constraint firstAttribute="height" constant="431" id="aEd-B9-WZp"/>
+                                    <constraint firstItem="m2C-la-ueU" firstAttribute="top" secondItem="mqS-AJ-2aW" secondAttribute="bottom" constant="15" id="t51-PA-Sxn"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="O5x-dO-TkP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OnJ-NZ-v53"/>
-                            <constraint firstItem="O5x-dO-TkP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="asx-BI-lJJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O5x-dO-TkP" secondAttribute="bottom" id="rU4-1O-rQD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O5x-dO-TkP" secondAttribute="trailing" id="saw-oG-B5z"/>
+                            <constraint firstItem="O5x-dO-TkP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="3Jk-l2-5fY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O5x-dO-TkP" secondAttribute="trailing" constant="15" id="4IT-nm-Q4L"/>
+                            <constraint firstItem="O5x-dO-TkP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="eWJ-5f-wVr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O5x-dO-TkP" secondAttribute="bottom" constant="15" id="xaw-K3-dIb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="MustacheMe" id="M4B-8I-goa">
                         <leftBarButtonItems>
-                            <barButtonItem title="Clear" id="ime-OH-tjn">
+                            <barButtonItem image="trash" catalog="system" id="ime-OH-tjn">
                                 <connections>
                                     <action selector="clearButtonSelected:" destination="BYZ-38-t0r" id="i3d-a3-07Z"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" id="yJE-ee-p0i">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G7m-xl-ksB">
-                                    <rect key="frame" x="67.5" y="7" width="35" height="30"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="G7m-xl-ksB">
+                                    <rect key="frame" x="59" y="11" width="20" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="undo"/>
+                                    <state key="normal" image="arrow.uturn.left" catalog="system"/>
                                     <connections>
                                         <action selector="undoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kmA-DA-FME"/>
                                     </connections>
@@ -169,6 +174,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.uturn.left" catalog="system" width="64" height="56"/>
         <image name="fordswelcome" width="355" height="381"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
 </document>
